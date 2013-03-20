@@ -49,6 +49,23 @@ body{
     min-width: 990px;
     font: normal 13px/1.4 Arial,Verdana,sans-serif;
     background: #001530;
+    &::-webkit-scrollbar {
+        width: 14px;
+    }
+    /* Track */ 
+    &::-webkit-scrollbar-track {
+        @include border-radius(10px);
+        @include box-shadow(inset 0 0 6px rgba(0,0,0,0.3));
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        @include border-radius(10px);
+        background: #00ABC6;
+    }
+    &::-webkit-scrollbar-track-piece  {
+        background: #08509F;
+        @include box-shadow(inset 0 0 6px rgba(0,0,0,0.3));
+    }
 }
 a{
     color: #ffa810;
