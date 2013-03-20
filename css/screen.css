@@ -105,7 +105,7 @@ a:hover { color: #fff; text-decoration: none; }
 
 /* -------------------------------------- //END Header ------------------------------------------ */
 /* ----------------------------------------- Sidebar -------------------------------------------- */
-.sidebar { float: left; margin-bottom: 2px; width: 188px; padding-left: 13px; }
+.sidebar { float: left; width: 188px; padding-left: 13px; }
 
 .main { float: right; padding: 0 15px; width: 745px; }
 
@@ -149,7 +149,8 @@ a:hover { color: #fff; text-decoration: none; }
 
 .support { float: right; }
 .support li { display: inline-block; padding: 0 20px 0 14px; border-left: 1px solid #233044; color: #818181; font-weight: bold; font-size: 11px; height: 30px; line-height: 30px; }
-.support li:nth-child(1) i { margin-right: 7px; background: url('../img/icons-s2df736c1bd.png') 0 -388px no-repeat; width: 13px; height: 15px; }
+.support li:nth-child(1) { padding-right: 8px; }
+.support li:nth-child(1) i { margin: -1px 1px 0 0; background: url('../img/icons-s2df736c1bd.png') 0 -388px no-repeat; width: 13px; height: 15px; }
 .support li:nth-child(2) i { margin-right: 2px; background: url('../img/icons-s2df736c1bd.png') 0 -457px no-repeat; width: 9px; height: 12px; }
 .support li i, .support li span { display: inline-block; vertical-align: middle; }
 

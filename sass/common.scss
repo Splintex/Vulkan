@@ -283,7 +283,6 @@ a{
 /* ----------------------------------------- Sidebar -------------------------------------------- */
 .sidebar {
     float: left;
-    margin-bottom: 2px;
     width: 188px;
     padding-left: 13px;
 }
@@ -457,8 +456,9 @@ a{
         height: 30px;
         line-height: 30px;
         &:nth-child(1) {
+            padding-right: 8px;
             i {
-                margin-right: 7px;
+                margin: -1px 1px 0 0;
                 @include sized-sprite($icons, chat);
             }
         }
