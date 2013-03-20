@@ -9,6 +9,11 @@
         text-align: center;
         display: inline-block;
         vertical-align: top;
+        &:hover {
+            a {
+                text-decoration: none;
+            }
+        }
     }
 }
 .game__img {
