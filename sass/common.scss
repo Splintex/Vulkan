@@ -214,9 +214,9 @@ a{
         font: bold 13px/26px Verdana,sans-serif;
         text-shadow: 0 -1px 0 rgba(0,0,0,.75);
         text-decoration: none;
+        @include transition(all 500ms ceaser($easeInOutBack));
         &:hover {
             background: url(../img/menu-item.png) 0 100% repeat;
-            //@include background-image(linear-gradient(bottom, #0145a1 0%, #03e9fd 100%));
         } 
         i {
             display: inline-block;
@@ -266,7 +266,7 @@ a{
 /* ----------------------------------------- Sidebar -------------------------------------------- */
 .sidebar {
     float: left;
-    width: 200px;
+    width: 188px;
 }
 .main {
     float: right;
@@ -331,6 +331,7 @@ a{
 }
 
 .pagin {
+    margin-bottom: 10px;
     @extend %clr;
     text-align: center;
     a {
