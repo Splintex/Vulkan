@@ -1,6 +1,5 @@
 @import "base";
 /* ------------------------------------- Reset css -------------------------------------------- */
-/* ------------------------------------- Reset css -------------------------------------------- */
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5,
 h6, p, blockquote, pre,a, abbr, acronym, address, big,
 cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small,
@@ -275,9 +274,19 @@ a{
     width: 745px;
 }
 .sidebar-item {
+    margin-bottom: 10px;
     @extend %shadow;
     @include border-radius(7px);
     background: #080808;
+    padding: 1px;
+}
+.sidebar-banner {
+    overflow: hidden;
+    @include border-radius(6px);
+    img {
+        display: block;
+        @include border-radius(6px);
+    }
 }
 .nav {
     padding: 10px 14px 17px 3px;
