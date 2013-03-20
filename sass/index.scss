@@ -3,9 +3,9 @@
     float: right;
 }
 .game {
-    margin-right: -15px;
+    margin:0  -15px -4px 0;
     li {
-        margin: 0 16px 13px 0;
+        margin: 0 16px 14px 0;
         text-align: center;
         display: inline-block;
         vertical-align: top;
@@ -13,7 +13,7 @@
 }
 .game__img {
     display: block;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     line-height: 119px;
     @include sized-sprite($icons, game);
     @include border-radius(4px);

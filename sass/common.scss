@@ -102,7 +102,7 @@ a{
  
 /* ----------------------------------------- Header --------------------------------------------- */
 .header {
-    margin-bottom: 19px;
+    margin-bottom: 17px;
 }
 .header__top {
     position: relative;
@@ -126,7 +126,7 @@ a{
 }
 .user-info {
     float: right;
-    padding: 14px 12px 0 0;
+    padding: 13px 11px 0 0;
     @extend %clr;
     line-height: 1;
     color: #555;
@@ -138,7 +138,7 @@ a{
 }
 .user-info__main {
     float: left;
-    margin-right: 5px;
+    margin-right: 9px;
 }
 .user-info__name {
     display: block;
@@ -166,7 +166,7 @@ a{
 }
 .user-info__points {
     display: block;
-    margin: 7px 0 9px;
+    margin: 6px 0 9px;
     strong {
         font-size: 14px;
     }
@@ -283,7 +283,9 @@ a{
 /* ----------------------------------------- Sidebar -------------------------------------------- */
 .sidebar {
     float: left;
+    margin-bottom: 2px;
     width: 188px;
+    padding-left: 13px;
 }
 .main {
     float: right;
@@ -293,20 +295,20 @@ a{
 .sidebar-item {
     margin-bottom: 10px;
     @extend %shadow;
-    @include border-radius(7px);
+    @include border-radius(10px);
     background: #080808;
     padding: 1px;
 }
 .sidebar-banner {
     overflow: hidden;
-    @include border-radius(6px);
+    @include border-radius(9px);
     img {
         display: block;
-        @include border-radius(6px);
+        @include border-radius(9px);
     }
 }
 .nav {
-    padding: 10px 14px 17px 3px;
+    padding: 15px 8px 11px 7px;
     ul {
         @extend %clr;
     }
@@ -315,11 +317,13 @@ a{
     }
     a {
         display: block;
-        padding: 1px 0 3px 42px;
+        padding: 1px 0 3px 8px;
     }
     .is-active {
         position: relative;
         a {
+            color: #fff;
+            text-decoration: none;
             @include background-image(linear-gradient(top, #e28400, #b70000 65%));
             &:after {
                 content: "";
@@ -353,9 +357,10 @@ a{
     text-align: center;
     a {
         display: inline-block;
-        margin: 0 6px;
+        margin: 4px 6px 0 5px;
         font-weight: bold;
         font-size: 14px;
+        line-height: 1;
         border-bottom: 2px solid;
         text-decoration: none;
     }
@@ -401,13 +406,13 @@ a{
 }
 .key {
     float: left;
-    padding: 5px 0 0 14px;
+    padding: 6px 0 0 14px;
     button {
         position: relative; 
         display: inline-block;
-        margin-right: 4px;
+        margin-right: 3px;
         width: 66px;
-        height: 20px;
+        height: 21px;
         font-size: 11px;
         border: 1px solid #2f576e;
         vertical-align: middle;
@@ -434,6 +439,8 @@ a{
         }
     } 
     span {
+        font-size: 11px;
+        font-weight: bold;
         color: #52c2ff;
         vertical-align: middle;
     }
@@ -457,7 +464,7 @@ a{
         }
         &:nth-child(2) {
             i {
-                margin-right: 3px;
+                margin-right: 2px;
                 @include sized-sprite($icons, lock);
             }
         }
@@ -467,14 +474,14 @@ a{
         }
     }
 }
-// .test {
-//     position: absolute;
-//     top: 0;
-//     left: 50%;
-//     margin-left: -780px;
-//     width: 1560px;
-//     height: 4000px;
-//     background: url(../img/test.png) 0 0 no-repeat;
-//     opacity: .7;
-//     z-index: 30000;
-// }
+.test {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -495px;
+    width: 990px;
+    height: 4000px;
+    background: url(../img/test.jpg) 0 0 no-repeat;
+    opacity: .7;
+    z-index: 30000;
+}
