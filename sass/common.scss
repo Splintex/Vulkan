@@ -197,6 +197,7 @@ a{
 .menu {
     height: 34px;
     background: #000 url(../img/menu-bg.png) 50% 0 no-repeat;
+    @include background-size(100%, 100%);
     ul {
         padding: 4px 0 0 68px;   
     }
@@ -402,6 +403,7 @@ a{
     overflow: hidden;
     width: 990px;
     background: #000 url(../img/footer-bg.png) 0 0 no-repeat;
+    @include background-size(100%, auto);
     border-bottom: 1px solid #232a33;
     @extend %clr; 
 }
