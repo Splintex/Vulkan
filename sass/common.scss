@@ -105,7 +105,7 @@ a{
 }
 .logo {
     position: absolute;
-    left: 25px;
+    left: 5px;
     top: 0;
     @include sized-sprite($icons, logo);
     &:before {
@@ -115,6 +115,16 @@ a{
         bottom: -25px;
         @include sized-sprite($icons, logo-bottom);
     }
+}
+.header__banner {
+    float: left;
+    margin: 2px 0 0 198px;
+    border-radius: 6px;
+    overflow: hidden;
+    img {
+        opacity: .5;
+        border-radius: 6px;
+    } 
 }
 .user-info {
     float: right;
@@ -186,7 +196,7 @@ a{
     border: 1px solid #050;
     text-transform: uppercase;
     text-decoration: none;
-    @include border-radius(5px);
+    border-radius: 5px;
     @include box-shadow(0 0 10px rgba(13,157,13,1), inset 0 0 5px rgba(12,157,13,.75));
     @include background-image(linear-gradient(bottom, #0b9909 0%, #057106 45.65%, #21af25 57.89%, #5fcb5d 100%));
     &:hover {
@@ -196,7 +206,8 @@ a{
 
 .menu {
     height: 34px;
-    background: #000 url(../img/menu-bg.png) 50% 0 no-repeat;
+    border-top: 1px solid #004194;
+    border-bottom: 1px solid #000;
     @include background-size(100%, 100%);
     ul {
         padding: 4px 0 0 68px;   
@@ -227,7 +238,7 @@ a{
         text-decoration: none;
         @include transition(all 500ms ceaser($easeInOutBack));
         &:hover {
-            background: url(../img/menu-item.png) 0 100% repeat;
+            
         } 
         i {
             display: inline-block;
@@ -294,16 +305,16 @@ a{
 .sidebar-item {
     margin-bottom: 9px;
     @extend %shadow;
-    @include border-radius(10px);
+    border-radius: 10px;
     background: #080808;
     padding: 1px;
 }
 .sidebar-banner {
     overflow: hidden;
-    @include border-radius(11px);
+    border-radius: 11px;
     img {
         display: block;
-        @include border-radius(11px);
+        border-radius: 11px;
     }
 }
 .nav {
@@ -327,6 +338,7 @@ a{
             color: #fff;
             text-decoration: none;
             @include border-radius(4px 0 0 4px);
+            border-radius: 4px 0 0 4px;
             @include background-image(linear-gradient(top, #e28400, #b70000 65%));
             &:after {
                 content: "";
@@ -423,10 +435,10 @@ a{
         @include box-shadow(inset 0 1px 3px rgba(255,255,255,.08));
         @include background-image(linear-gradient(bottom, rgba(16,56,89,.95) 0%, rgba(1,27,64,.95) 20.56%, rgba(0,26,65,.95) 53.64%, rgba(11,54,89,.95) 100%));
         &:first-child {
-            @include border-radius(5px 0 0 5px);
+            border-radius: 5px 0 0 5px;
         }
         &:last-child {
-            @include border-radius(0 5px 5px 0);
+            border-radius: 5px 0 0 5px;
         }
     }
     .is-active {
