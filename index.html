@@ -45,11 +45,9 @@
         <nav class="menu">
             <ul>
                 <li><a href="#">Игровой зал</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Введение</a></li>
-                <li>
-                    <a href="#">Акции и бонусы<i></i></a>
-                    <ul class="submenu">
+                <li class="is-active">
+                    <a href="#">Акции и бонусы<!-- <i></i> --></a>
+                    <!-- <ul class="submenu">
                         <li></li>
                         <li><a href="#">Акции</a></li>
                         <li><a href="#">Бонусы</a></li>
@@ -57,34 +55,31 @@
                         <li><a href="#">Джекпот</a></li>
                         <li><a href="#">Магазин</a></li>
                         <li><a href="#">Баллы и уровни</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
+                <li><a href="#">Мои бонусы</a></li>
                 <li><a href="#">Касса</a></li>
                 <li><a href="#">Достижения</a></li>
-                <li><a href="#">Новости</a></li>
-                <li><a href="#">Помощь</a></li>                                                 
+                <li><a href="#">Помощь<i class="menu__online"></i><i class="menu__img"></i></a></li>                                                 
             </ul>
         </nav>
     </header>
     <section class="wrap">
         <aside class="sidebar">
-            <div class="sidebar-item">
-                <nav class="nav">
-                    <ul>
-                        <li class="is-active"><a href="#">Популярные игры</a></li>
-                        <li><a href="#">Новые игры</a></li>
-                        <li><a href="#">Любимые игры</a></li>
-                        <li><a href="#">Игры по алфавиту</a></li>
-                        <li><a href="#">Игры казино</a></li>
-                        <li><a href="#">Описание игр</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="sidebar-item">
-                <div class="sidebar-banner">
-                    <a href="#"><img src="img/banner.jpg"></a>
-                </div>
-            </div>
+            <nav class="nav">
+                <ul>
+                    <li class="is-active"><a href="#">Новые игры (23)</a></li>
+                    <li><a href="#">Любимые игры</a></li>
+                    <li><a href="#">Игры по алфавиту</a></li>
+                    <li><a href="#">Игры казино (12)</a></li>
+                    <li>
+                        <div class="search">
+                            <input type="text" placeholder="Название аппарата...">
+                            <input type="submit" value="">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </aside>
         <div class="main">
             <ul class="game">

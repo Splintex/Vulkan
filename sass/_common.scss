@@ -124,6 +124,9 @@ a{
     img {
         opacity: .5;
         border-radius: 6px;
+        &:hover {
+            opacity: 1;
+        }
     } 
 }
 .user-info {
@@ -205,148 +208,193 @@ a{
 }
 
 .menu {
-    height: 34px;
+    clear: both;
     border-top: 1px solid #004194;
     border-bottom: 1px solid #000;
-    @include background-size(100%, 100%);
+    @include box-shadow(0 1px 0 #000);
+    @include background-image(linear-gradient(bottom, #00132d 0%, #00132d 49.88%, #00214b 100%));
     ul {
-        padding: 4px 0 0 68px;   
+        padding: 0 0 0 68px;   
+        height: 34px; 
+        @extend %clr;
     }
     li {
         position: relative;
-        display: inline-block;
+        float: left;
         &:hover {
-            @include box-shadow(-1px 0 0 #306aaf, 1px 0 0 #306aaf);
-            .submenu {
-                display: block;
-            } 
+            // .submenu { 
+            //     display: block;
+            // } 
         }
         &:last-child {
             a {
+                padding: 0 45px 0 26px;
                 @include transition(none);
-                @include background-image(linear-gradient(bottom, #0145a1 0%, #03e9fd 100%))
+                text-shadow: 0 1px 0 rgba(0,0,0,.75);
+                @include background-image(linear-gradient(top, #00daf8, #0094ff))
+            }
+        }
+    } 
+    .is-active {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            margin-left: -120px;
+            bottom: 0;
+            @include sized-sprite($icons, menu-act); 
+        }
+        a {
+            z-index: 2;
+            text-shadow: 0 0 12px rgba(0,134,255,.75), 0 0 1px #004788;
+            &:before,
+            &:after {
+                display: none;
+            }
+            &:hover {
+                background: none;
             }
         }
     }
     a {
+        position: relative;
         display: block;
-        padding: 0 17px;
-        height: 26px; 
+        padding: 0 29px;
+        height: 34px; 
         color: #fff;
-        font: bold 13px/26px Verdana,sans-serif;
+        font: bold 16px/34px Arial,sans-serif;
         text-shadow: 0 -1px 0 rgba(0,0,0,.75);
         text-decoration: none;
-        @include transition(all 500ms ceaser($easeInOutBack));
+        @include transition(all 100ms ceaser($easeInOutBack));
         &:hover {
-            
+            @include background-image(linear-gradient(bottom, #00214b 0%, #00132d 49.88%, #00132d 100%));
+            &:before,
+            &:after {
+                display: none;
+            }
         } 
-        i {
-            display: inline-block;
-            margin-left: 9px;
-            @include sized-sprite($icons, arr1); 
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            height: 100%;
         }
-    }
-    .submenu {
-        padding: 0;
-    }
+        &:before {
+            left: 0;
+            @include background-image(linear-gradient(top, #001836, #00050c)); 
+        }
+        &:after {
+            right: 0;
+            @include background-image(linear-gradient(top, #004194, #00152e)); 
+        }
+        // i {
+        //     display: inline-block;
+        //     margin-left: 9px;
+        //     @include sized-sprite($icons, arr1); 
+        // }
+    } 
+    // .submenu {
+    //     padding: 0;
+    // }
 }
-.submenu {
-    display: none;
+.menu__online {
+    display: inline-block;
+    @include sized-sprite($icons, online); 
+}
+.menu__img {
     position: absolute;
-    left: -1px;
-    top: 26px;
-    width: 100%;
-    border: 1px solid #62b6ef;
-    li {
-        display: block;
-        text-align: center;
-        border-top: 1px solid #62b6ef;
-        &:first-child {
-            height: 5px; 
-            border-top: 0;
-            background: #000 url(../img/menu-bg.png) 0 2px  repeat;
-        }
-        &:last-child {
-            a {
-                background: url(../img/menu-item.png) 0 0 repeat;
-            }
-        }
-        &:hover {
-            a {
-                background: url(../img/menu-item.png) 0 100% repeat;
-            }
-        }
-    }
-    a {
-        padding: 0;
-        font-size: 12px;
-        background: url(../img/menu-item.png) 0 0 repeat;
-    }
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    @include sized-sprite($icons, girl); 
 }
+// .submenu {
+//     display: none;
+//     position: absolute;
+//     left: -1px;
+//     top: 26px;
+//     width: 100%; 
+//     border: 1px solid #62b6ef;
+//     li {
+//         display: block;
+//         text-align: center;
+//         border-top: 1px solid #62b6ef;
+//         &:first-child {
+//             height: 5px; 
+//             border-top: 0;
+//             background: #000 url(../img/menu-bg.png) 0 2px  repeat;
+//         }
+//         &:last-child {
+//             a {
+//                 background: url(../img/menu-item.png) 0 0 repeat;
+//             }
+//         }
+//         &:hover {
+//             a {
+//                 background: url(../img/menu-item.png) 0 100% repeat;
+//             }
+//         }
+//     }
+//     a {
+//         padding: 0;
+//         font-size: 12px;
+//         background: url(../img/menu-item.png) 0 0 repeat;
+//     }
+// }
 /* -------------------------------------- //END Header ------------------------------------------ */
 
 /* ----------------------------------------- Sidebar -------------------------------------------- */
 .wrap {
+    padding: 2px;
     @extend %clr;
-    background: #001e40;
+    @include background-image(linear-gradient(top, #10367b, #000 30%));
 }
 .sidebar {
     float: left;
-    padding: 17px 13px 0;
-    width: 188px;
+    width: 194px;
+    @include box-sizing(border-box);
 }
 .main {
     float: right;
     padding: 17px 15px 0;
-    width: 745px;
-    @include box-shadow(inset 0 0 19px 6px rgba(0,0,0,.75));
-    @include background-image(radial-gradient(center 6%, 150px 150px, #003b7b 0%, rgba(2,41,83,0) 100%));
-}
-.sidebar-item {
-    margin-bottom: 9px;
-    @extend %shadow;
-    border-radius: 10px;
-    background: #080808;
-    padding: 1px;
-}
-.sidebar-banner {
-    overflow: hidden;
-    border-radius: 11px;
-    img {
-        display: block;
-        border-radius: 11px;
-    }
+    width: 789px;
+    background: #001d41;
+    @include box-shadow(inset 0 0 0 1px #005bce);
+    @include box-sizing(border-box);
+    border-radius: 3px;
 }
 .nav {
-    padding: 16px 8px 12px 7px;
-    ul {
-        @extend %clr;
-    }
-    li {
-        margin-bottom: 2px;
-    }
+    border: 1px solid #002149;
+    border-radius: 3px;
+    overflow: hidden;
     a {
         display: block;
-        padding: 1px 0 3px 8px;
-        &:hover {
-            color: #fff;
+        padding: 0 10px 0 15px;
+        height: 33px;
+        font-weight: bold; 
+        line-height: 33px;
+        text-decoration: none;
+        border-top: 1px solid #004194;
+        border-bottom: 1px solid #000;
+        text-shadow: 0 -1px 1px rgba(0,0,0,.75);
+        @include background-image(linear-gradient(top, #00214a, #00142d 30%));
+    }
+    li {
+        &:first-child {
+            a {
+                border-radius: 3px 3px 0 0;
+            }
         }
     }
     .is-active {
-        position: relative;
         a {
             color: #fff;
-            text-decoration: none;
-            @include border-radius(4px 0 0 4px);
-            border-radius: 4px 0 0 4px;
-            @include background-image(linear-gradient(top, #e28400, #b70000 65%));
-            &:after {
-                content: "";
-                position: absolute;
-                right: -13px;
-                top: 0;
-                @include sized-sprite($icons, arr2);
-            }
+            @include background-image(linear-gradient(top, #e17f00, #b70100));
         }
     }
 }
