@@ -26,13 +26,39 @@
         }
     }
     .is-jackpot {
+        position: relative;
         .game__img {
-           background: url(../img/jackpot.png) 0 0 no-repeat;
+            @include border-radius(7px);
+            @include sized-sprite($icons, jackpot);
+            &:hover {
+                @include box-shadow(0 0 20px #ffd200);
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            margin-left: -75px;
+            @include sized-sprite($icons, jackpot-t);
         }
     }
     .is-super-jackpot {
+        position: relative;
         .game__img {
-           background: url(../img/super-jackpot.png) 0 0 no-repeat;
+            @include border-radius(7px);
+            @include sized-sprite($icons, super-jackpot);
+            &:hover {
+                @include box-shadow(0 0 20px #ffd200);
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            margin-left: -64px;
+            @include sized-sprite($icons, super-jackpot-t); 
         }
     }
 }
