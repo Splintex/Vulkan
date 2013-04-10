@@ -248,7 +248,7 @@ a{
         }
         a {
             z-index: 2;
-            text-shadow: 0 0 12px rgba(0,134,255,.75), 0 0 1px #004788;
+            text-shadow: 0 0 10px #0086ff, 0 0 10px #0086ff, 0 0 10px #0086ff, 0 0 1px #004788;
             &:before,
             &:after {
                 display: none;
@@ -369,6 +369,7 @@ a{
     border-radius: 3px;
 }
 .nav {
+    margin: 0 0 3px;
     border: 1px solid #002149;
     border-radius: 3px;
     overflow: hidden;
@@ -376,7 +377,8 @@ a{
         display: block;
         padding: 0 10px 0 15px;
         height: 33px;
-        font-weight: bold; 
+        font-weight: bold;
+        color: #f4d09e; 
         line-height: 33px;
         text-decoration: none;
         border-top: 1px solid #004194;
@@ -393,11 +395,44 @@ a{
     }
     .is-active {
         a {
-            color: #fff;
+            font-size: 11px;
+            border-top: 1px solid #f4d09e;
             @include background-image(linear-gradient(top, #e17f00, #b70100));
         }
     }
 }
+.search {
+    position: relative;
+    padding: 3px;
+    @include background-image(linear-gradient(top, #00214a, #00142d 30%));
+}
+.search__text {
+    width: 100%;
+    padding: 0 35px 0 8px;
+    height: 27px;
+    background: #000b1b;
+    color: #fff;
+    font-family: Arial,sans-serif;
+    @include placeholder(#515151, italic, Arial);
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.75));
+    @include box-sizing(border-box);
+}
+.search__submit {
+    position: absolute;
+    top: 5px;
+    right: 1px;
+    @include sized-sprite($icons, search);
+}
+.sidebar__banner {
+    display: block;
+    overflow: hidden;
+    @include border-radius(5px);
+    img {
+        border: 1px solid #002149;
+        @include border-radius(5px);
+    }
+}
+
 /* -------------------------------------- //END Sidebar ------------------------------------------ */
 
 /* ------------------------------------- Independent blocks -------------------------------------- */
@@ -419,39 +454,93 @@ a{
     @extend %clr;
     text-align: center;
     a {
+        position: relative;
         display: inline-block;
-        margin: 4px 6px 0 5px;
+        margin-left: -4px;
+        width: 33px;
+        height: 29px;
+        line-height: 29px; 
         font-weight: bold;
         font-size: 14px;
-        line-height: 1;
-        border-bottom: 2px solid;
         text-decoration: none;
+        border-top: 1px solid #004194;
+        border-bottom: 1px solid #000;
+        text-shadow: 0 -1px 1px rgba(0,0,0,.75);
+        @include background-image(linear-gradient(top, #00214a, #00142d 30%));
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            height: 100%;
+        }
+        &:before {
+            left: 0;
+            @include background-image(linear-gradient(top, #001836, #00050c)); 
+        }
+        &:after {
+            right: 0;
+            @include background-image(linear-gradient(top, #002e68, #00152f)); 
+        }
+        &:hover {
+            color: #fff;
+        }
+    }
+    .pagin__first {
+        @include border-radius(4px 0 0 4px);
+        &:before {
+            display: none;
+        }
+    }
+    .pagin__last {
+        @include border-radius(0 4px 4px 0);
+        &:after {
+            display: none;
+        }
     }
     .pagin__prev,
     .pagin__next {
-        border: 0; 
+        width: auto;
         margin: 0;
-        color: #fff;
-        font-size: 13px;
-        line-height: 26px;
+        line-height: 29px;
+        @include border-radius(4px);
+        &:before,
+        &:after {
+            display: none;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            margin-top: -7px;
+        }
     }
     .is-active {
         color: #fff;
-        border: 0;
+        @include background-image(linear-gradient(top, #000, #003982));
     }
 }
 .pagin__prev {
+    position: relative;
     float: left;
-    @include sized-sprite($icons, pagin-prev);
     span {
-        padding-left: 10px;
+        padding: 0 18px 0 34px;
+    }
+    i {
+        left: 13px;
+        @include sized-sprite($icons, prev);
     }
 }
 .pagin__next { 
+    position: relative;
     float: right;
-    @include sized-sprite($icons, pagin-next);
     span {
-        padding-right: 15px;
+        padding: 0 34px 0 18px;
+    }
+    i {
+        right: 13px;
+        @include sized-sprite($icons, next);
     }
 }
 /* ---------------------------------- //END Independent blocks ----------------------------------- */
@@ -459,41 +548,56 @@ a{
 /* ----------------------------------------- Footer ---------------------------------------------- */
 .footer {
     margin: 0 auto;
-    height: 34px;
+    height: 31px;
     overflow: hidden;
     width: 990px;
-    background: #000 url(../img/footer-bg.png) 0 0 no-repeat;
-    @include background-size(100%, auto);
-    border-bottom: 1px solid #232a33;
+    border-top: 1px solid #00295e;
+    @include background-image(linear-gradient(top, #001838, #001024));
     @extend %clr; 
 }
 .key {
     float: left;
-    padding: 9px 0 0 14px;
+    padding: 1px 0 0 3px;
     @extend %clr;
     button {
+        position: relative;
         float: left;
         margin: 0;
-        padding: 0 7px;
-        height: 20px;
-        color: #596e88;
-        font-size: 11px;
+        padding: 0 13px;
+        height: 28px;
+        color: #3b4b63;
+        font-size: 12px;
         font-weight: bold;
-        border: 1px solid #172f3d;
-        @include box-shadow(inset 0 1px 3px rgba(255,255,255,.08));
-        @include background-image(linear-gradient(bottom, rgba(16,56,89,.95) 0%, rgba(1,27,64,.95) 20.56%, rgba(0,26,65,.95) 53.64%, rgba(11,54,89,.95) 100%));
+        border-top: 1px solid #004092;
+        border-bottom: 1px solid #000;
+        @include background-image(linear-gradient(top, #00224c, #00142d));
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            height: 100%;
+        }
         &:first-child {
             border-radius: 5px 0 0 5px;
+            &:after {
+                right: 0;
+                @include background-image(linear-gradient(top, #002e68, #00152f)); 
+            }
         }
         &:last-child {
-            border-radius: 5px 0 0 5px;
+            border-radius: 0 5px 5px 0;
+            &:after {
+                left: 0;
+                @include background-image(linear-gradient(top, #001836, #00050c)); 
+            }
         }
     }
     .is-active {
-        color: #7be8fc;
-        border: 1px solid #51c1ff;
-        @include box-shadow(0 0 5px rgba(74,185,255,.6), inset 0 1px 4px rgba(255,255,255,.23));
-        @include background-image(linear-gradient(bottom, #52c2ff 0%, #053480 21%, #002c86 54%, #38bbff 100%));
+        color: #fff;
+        text-shadow: 0 0 10px #0086ff, 0 0 10px #0086ff;
+        @include background-image(linear-gradient(top, #000, #00377e));
     }
 }
 .support {
@@ -502,28 +606,23 @@ a{
     li {
         display: inline-block;
         padding: 0 20px 0 14px;
-        border-left: 1px solid #233044;
         color: #818181;
         font-weight: bold;
-        font-size: 11px;
+        font-size: 12px;
         height: 30px;
         line-height: 30px;
-        &:nth-child(1) {
-            padding-right: 8px;
-            i {
-                margin: -1px 3px 0 0;
-                @include sized-sprite($icons, chat);
-            }
-        }
-        &:nth-child(2) {
-            i {
-                margin-right: 3px;
-                @include sized-sprite($icons, lock);
-            }
-        }
-        i, span {
-            display: inline-block;
-            vertical-align: middle;
-        }
     }
+    .support__online {
+        color: #41a7f1;
+        i {
+            display: inline-block;
+            margin-right: 5px;
+            width: 9px;
+            height: 9px;
+            @include border-radius(50%);
+            @include box-shadow(0 0 10px 1px rgba(5,99,255,1));
+            @include background-image(linear-gradient(top, #48c5fd, #2276c5, #48c5fd));
+        } 
+    } 
 }
+ 

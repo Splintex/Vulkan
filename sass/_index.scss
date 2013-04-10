@@ -15,17 +15,39 @@
             }
         }
     }
+    .is-new {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            top: -9px;
+            left: -13px;
+            @include sized-sprite($icons, badge-new);
+        }
+    }
+    .is-jackpot {
+        .game__img {
+           background: url(../img/jackpot.png) 0 0 no-repeat;
+        }
+    }
+    .is-super-jackpot {
+        .game__img {
+           background: url(../img/super-jackpot.png) 0 0 no-repeat;
+        }
+    }
 }
 .game__img {
     display: block;
+    width: 167px;
+    height: 114px;
     margin-bottom: 5px;
     line-height: 119px;
-    @include sized-sprite($icons, game);
+    background: url(../img/game.png) 0 0 no-repeat;
     @include border-radius(4px);
     &:hover {
-        @include box-shadow(inset 0 0 0 2px #00abc6, 0 0 15px #0f78ea, 0 0 15px #0f78ea);
+        @include box-shadow(inset 0 0 0 2px #70a0fd, 0 0 15px #0f78ea, 0 0 15px #0f78ea);
     }
     img {
         vertical-align: middle;
     }
-}
+} 

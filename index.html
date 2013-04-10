@@ -68,104 +68,98 @@
         <aside class="sidebar">
             <nav class="nav">
                 <ul>
-                    <li class="is-active"><a href="#">Новые игры (23)</a></li>
+                    <li class="is-active"><a href="#">Все игровые автоматы (34)</a></li>
+                    <li><a href="#">Новые игры (23)</a></li>
                     <li><a href="#">Любимые игры</a></li>
                     <li><a href="#">Игры по алфавиту</a></li>
                     <li><a href="#">Игры казино (12)</a></li>
                     <li>
                         <div class="search">
-                            <input type="text" placeholder="Название аппарата...">
-                            <input type="submit" value="">
+                            <input class="search__text" type="text" placeholder="Название аппарата...">
+                            <input class="search__submit" type="submit" value="">
                         </div>
                     </li>
                 </ul>
             </nav>
+            <a class="sidebar__banner" href="#">
+                <img src="img/banner.jpg" alt="">
+            </a>
         </aside>
         <div class="main">
             <ul class="game">
-                <li>
+                <li class="is-new">
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
+                </li>
+                <li class="is-jackpot">
+                    <a href="#" class="game__img">
+                        <img src="img/game1.png" alt="">
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
+                </li>
+                <li class="is-super-jackpot">
+                    <a href="#" class="game__img">
+                        <img src="img/game1.png" alt="">
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
                 <li>
                     <a href="#" class="game__img">
                         <img src="img/game1.png" alt="">
                     </a>
-                    <a href="#">Gryphon's Gold</a>
-                </li>
-                <li>
-                    <a href="#" class="game__img">
-                        <img src="img/game1.png" alt="">
-                    </a>
-                    <a href="#">Gryphon's Gold</a>
-                </li>
-                <li>
-                    <a href="#" class="game__img">
-                        <img src="img/game1.png" alt="">
-                    </a>
-                    <a href="#">Gryphon's Gold</a>
                 </li>
             </ul>
             <div class="pagin">
-                <a href="#" class="pagin__prev"><span>Назад</span></a>
-                <a href="#">1</a>
+                <a href="#" class="pagin__prev"><i></i><span>Назад</span></a>
+                <a href="#" class="pagin__first">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
-                <a href="#" class="is-active">4</a>
-                <a href="#">5</a>
+                <a href="#">4</a>
+                <a href="#" class="is-active">5</a>
                 <a href="#">6</a>
                 <a href="#">7</a>
-                <a href="#" class="pagin__next"><span>Вперед</span></a>
+                <a href="#">8</a>
+                <a href="#" class="pagin__last">9</a>
+                <a href="#" class="pagin__next"><span>Вперед</span><i></i></a>
             </div>
         </div>
     </section>
@@ -173,12 +167,11 @@
 <footer class="footer">
     <div class="key js-keys">
         <button class="is-active">Реальные деньги</button>
-        <button>Виртуальные деньги</button>
+        <button>Демо-режим</button>
     </div>
     <ul class="support">
-        <li><a href="#"><i></i><span>Служба поддержки</span></a></li>
-        <li><i></i><span>Онлайн</span></li>
-        <li><span>13.03.2012  15:13 MSK</span></li>
+        <li class="support__online"><i></i>Онлайн</li>
+        <li>13.03.2012  15:13 MSK</li>
     </ul>
 </footer>
 </body>
